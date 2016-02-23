@@ -4,7 +4,7 @@ function install_php() {
 	
 	pushd ${OPENSHIFT_DIY_DIR}
 	rm -f php-${DIST_PHP_VER}.tar.gz
-
+	
     if [ -d php-${DIST_PHP_VER} ]; then
       echo "PHP Source code dir found. skipping downloading."
     else
@@ -22,6 +22,9 @@ function install_php() {
 	
 	mkdir -p ${LIB_DIR}
 	mkdir -p ${CONF_DIR}/php5/conf.d/
+	
+	wget http://ibiblio.org/pub/Linux/ALPHA/freetds/stable/freetds-stable.tgz
+	tar -xzvf freetds-stable.tgz
 	
     [ ! -f Makefile ] && \
 	./configure \
