@@ -38,6 +38,7 @@ function install_php() {
             --with-mysql \
             --with-pgsql \
             --with-mysqli \
+             --with-mssql \
             --with-pdo-mysql \
             --with-pdo-pgsql \
             --with-openssl \
