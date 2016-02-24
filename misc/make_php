@@ -29,6 +29,8 @@ function install_php() {
     [ ! -f Makefile ] && \
 	./configure \
             --with-libdir=lib64 \
+            --prefix=/usr/local/freetds \
+            --with-sybase=/usr/local/freetds\
             --prefix=${ROOT_DIR} \
             --with-config-file-path=${CONF_DIR}/php5/ \
             --with-config-file-scan-dir=${CONF_DIR}/php5/conf.d/ \
@@ -41,7 +43,6 @@ function install_php() {
             --with-mysql \
             --with-pgsql \
             --with-mysqli \
-             --with-mssql \
             --with-pdo-mysql \
             --with-pdo-pgsql \
             --with-openssl \
